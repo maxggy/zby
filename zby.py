@@ -3,7 +3,7 @@ from openai import OpenAI
 import streamlit as st
 from PIL import Image
 st.snow()
-st.header(":+1::rainbow:您好，我是熵语聊天AI,请问我有什么需要帮你的？:+1:",divider="rainbow")
+st.header(":+1: :rainbow[您好，我是熵语聊天AI,请问我有什么需要帮你的？] :+1:",divider="rainbow")
 st.text_area("安全提示：",value="提问需合法合规，谢谢配合！",label_visibility="visible")
 st.sidebar.write("登陆账号")
 default=st.sidebar.text_input("账号",type="default")
@@ -41,5 +41,6 @@ if chat:
 
     st.markdown(response.choices[0].message.content)
     st.session_state.messages.append({"role":"assistant","content":response.choices[0].message.content})
+
 
 
